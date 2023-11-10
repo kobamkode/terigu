@@ -4,9 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html --dist-dir ./templates --public-url ./assets",
-    "move": "mkdir -p ./templates/assets/ && mv ./templates/*.css ./templates/assets/ && mv ./templates/*.map ./templates/assets/",
-    "compile": "npm run build && npm run move"
+    "build": "parcel build src/index.html --dist-dir ./templates --public-url ./assets"
   },
   "keywords": [],
   "author": "Mario Wibisono",
