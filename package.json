@@ -1,0 +1,21 @@
+{
+  "name": "terigu",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html --dist-dir ./templates --public-url ./assets",
+    "move": "mkdir -p ./templates/assets/ && mv ./templates/*.css ./templates/assets/ && mv ./templates/*.map ./templates/assets/",
+    "compile": "npm run build && npm run move"
+  },
+  "keywords": [],
+  "author": "Mario Wibisono",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^3.9.4",
+    "parcel": "^2.10.2",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  }
+}
