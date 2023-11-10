@@ -1,3 +1,3 @@
 # Terigu
 
-Monolith base playground
+Monolith base ingredient
