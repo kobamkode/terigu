@@ -1,6 +1,6 @@
 use askama::Template;
 use axum::{Router, routing::get};
-use std::net::SocketAddr;
+use tokio::net::TcpListener;
 use tower_http::services::ServeDir;
 
 #[derive(Template)]
@@ -16,9 +16,9 @@ async fn hello() -> HelloTemplate<'static> {
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt::init();
-    let app = Router::new().route("/", get(hello)).nest_service("/assets", ServeDir::new("templates/assets"));
+    let app = Router::new().nest_service("/assets", ServeDir::new("templates/assets"))
+        .route("/", get(hello));
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    tracing::debug!("listening on {}", addr);
-    axum::Server::bind(&addr).serve(app.into_make_service()).await.unwrap();
+    let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
