@@ -1,4 +1,4 @@
-package home
+package web
 
 import (
 	"os"
@@ -7,7 +7,7 @@ import (
 )
 
 func HomePage(c *fiber.Ctx) error {
-	return c.Render("index", fiber.Map{
+	return c.Render("home", fiber.Map{
 		"AppName": os.Getenv("APP_NAME"),
 		"Title":   "Hello, World!",
 	}, "layouts/main")
