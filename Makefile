@@ -17,3 +17,6 @@ migrate-up:
 
 migrate-down:
 	go run cmd/migrate/main.go -run=down
+
+build-tailwind:
+	npx tailwindcss -i ./assets/css/src.css -o ./assets/css/dist.css
