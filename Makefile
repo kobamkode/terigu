@@ -1,7 +1,9 @@
-run: gen build-css
+all: sqlc-gen style-build run
+
+run:
 	go run cmd/app/main.go
 
-gen:
+sqlc-gen:
 	sqlc generate
 
 up: compose-up migrate-up
@@ -18,5 +20,5 @@ migrate-up:
 migrate-down:
 	go run cmd/migrate/main.go -run=down
 
-build-css:
+style-build:
 	npx tailwindcss -i ./assets/css/src.css -o ./assets/css/dist.css

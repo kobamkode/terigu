@@ -11,8 +11,8 @@ func init() {
 }
 
 func main() {
-	pool := database.NewDBPool()
-	defer pool.Close()
+	db := database.NewDBPool()
+	defer db.Close()
 
-	server.Run(pool)
+	server.Run(db)
 }

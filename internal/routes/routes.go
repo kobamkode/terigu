@@ -3,9 +3,9 @@ package routes
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/kobamkode/terigu/internal/admin"
-	"github.com/kobamkode/terigu/internal/api"
-	"github.com/kobamkode/terigu/internal/web"
+	"github.com/kobamkode/terigu/internal/handlers/admin"
+	"github.com/kobamkode/terigu/internal/handlers/api"
+	"github.com/kobamkode/terigu/internal/handlers/web"
 )
 
 type handler struct {
@@ -30,4 +30,6 @@ func (h *handler) API() {
 func (h *handler) Admin() {
 	r := h.app.Group("/admin")
 	r.Get("/", admin.DashboardPage)
+	r.Get("/login", admin.LoginPage)
+	// r.Get("/register", admin.RegisterPage)
 }
