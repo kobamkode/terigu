@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{.AppName}}</title>
+	<link href="assets/css/dist.css" rel="stylesheet">
+	<script src="assets/js/htmx.min.js"></script>
+</head>
+
+<body>
+	<div class="flex">
+		<div class="flex-none">
+			{{template "partials/drawer"}}
+		</div>
+		<div class="flex-1 bg-slate-200 p-4">{{embed}}</div>
+	</div>
+</body>
+
+</html>

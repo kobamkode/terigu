@@ -7,4 +7,3 @@ func Ping(c *fiber.Ctx) error {
 		"message": "PONG",
 	})
 }
-
