@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/kobamkode/terigu/compare/v0.1.2...v0.2.0) (2024-08-30)
+
+
+### Features
+
+* **app:** add landing page [#6](https://github.com/kobamkode/terigu/issues/6) ([0d1fff9](https://github.com/kobamkode/terigu/commit/0d1fff9f5229a91dddb9430c7f7f9aae735bc0ed))
+
 ## [0.1.2](https://github.com/kobamkode/terigu/compare/v0.1.1...v0.1.2) (2024-08-24)
 
 
