@@ -4,20 +4,20 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/kobamkode/terigu/config"
 )
 
-func NewDBPool() *pgxpool.Pool {
+func PostgresConn() *pgxpool.Pool {
 	ctx := context.Background()
 	dbUrl := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=%s",
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_HOST"),
-		os.Getenv("DB_PORT"),
-		os.Getenv("DB_NAME"),
-		os.Getenv("DB_SSL"),
+		config.Get("DB_USER"),
+		config.Get("DB_PASSWORD"),
+		config.Get("DB_HOST"),
+		config.Get("DB_PORT"),
+		config.Get("DB_NAME"),
+		config.Get("DB_SSL"),
 	)
 
 	pool, err := pgxpool.New(ctx, dbUrl)

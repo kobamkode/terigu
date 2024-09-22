@@ -1,4 +1,4 @@
-package admin
+package handlers
 
 import (
 	"os"
@@ -12,10 +12,3 @@ func LoginPage(c *fiber.Ctx) error {
 		"Title":   "Login",
 	}, "layouts/auth")
 }
-
-// func RegisterPage(c *fiber.Ctx) error {
-// 	return c.Render("register", fiber.Map{
-// 		"AppName": os.Getenv("APP_NAME"),
-// 		"Title":   "Register",
-// 	}, "layouts/auth")
-// }

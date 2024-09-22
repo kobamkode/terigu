@@ -21,4 +21,4 @@ migrate-down:
 	go run cmd/migrate/main.go -run=down
 
 style-build:
-	npx tailwindcss -i ./assets/css/src.css -o ./assets/css/dist.css
+	npx tailwindcss -i ./views/assets/css/src.css -o ./views/assets/css/dist.css

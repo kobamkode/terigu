@@ -1,8 +1,16 @@
 services:
-  db:
+  postgres:
     image: postgres:alpine
     ports:
       - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: 123456
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
 
+volumes:
+  pgdata:

@@ -2,34 +2,39 @@ package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/csrf"
+	"github.com/gofiber/fiber/v2/middleware/limiter"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/fiber/v2/middleware/requestid"
+	"github.com/gofiber/fiber/v2/middleware/session"
+	"github.com/gofiber/storage/redis/v3"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/kobamkode/terigu/internal/handlers/admin"
-	"github.com/kobamkode/terigu/internal/handlers/api"
-	"github.com/kobamkode/terigu/internal/handlers/web"
+	"github.com/kobamkode/terigu/config"
+	"github.com/kobamkode/terigu/internal/handlers"
 )
 
-type handler struct {
-	app  *fiber.App
-	pool *pgxpool.Pool
-}
+func Setup(app *fiber.App, db *pgxpool.Pool, store *redis.Storage) {
+	// Assets
+	app.Static("/assets", "./views/assets")
+	app.Static("/admin/assets", "./views/assets")
 
-func NewHandler(app *fiber.App, pool *pgxpool.Pool) *handler {
-	return &handler{app, pool}
-}
+	// Middlewares
+	s := session.New(config.Session(store))
+	app.Use(csrf.New(config.Csrf(s)))
+	app.Use(logger.New(config.Logger()))
+	app.Use(requestid.New())
+	app.Use(limiter.New())
 
-func (h *handler) Web() {
-	h.app.Get("/", web.HomePage)
-}
+	// Web Routes
+	app.Get("/", handlers.HomePage)
 
-func (h *handler) API() {
-	r := h.app.Group("/api")
-	r.Get("/ping", api.Ping)
+	// API Routes
+	api := app.Group("/api")
 
-}
+	api.Get("/ping", handlers.Ping)
 
-func (h *handler) Admin() {
-	r := h.app.Group("/admin")
-	r.Get("/", admin.DashboardPage)
-	r.Get("/login", admin.LoginPage)
-	// r.Get("/register", admin.RegisterPage)
+	// Admin Routes
+	admin := app.Group("/admin")
+	admin.Get("/", handlers.DashboardPage)
+	admin.Get("/login", handlers.LoginPage)
 }
