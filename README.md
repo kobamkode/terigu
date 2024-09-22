@@ -1,6 +1,6 @@
 # Terigu
 
-Me try to build 🍜 with [fiber](https://gofiber.io/) + [htmx](https://htmx.org/) + [sqlc](https://sqlc.dev/) 
+Me try to make 🍜 with [fiber](https://gofiber.io/) + [htmx](https://htmx.org/) + [sqlc](https://sqlc.dev/) 
 
 ## Development
 
