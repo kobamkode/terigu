@@ -1,5 +1,7 @@
-CREATE TABLE public.users (
-	id bigserial NOT NULL,
-	"name" varchar NOT NULL,
-	CONSTRAINT users_pk PRIMARY KEY (id)
+CREATE TABLE users
+(
+  id       bigserial NOT NULL,
+  username varchar   NOT NULL,
+  password varchar   NOT NULL,
+  PRIMARY KEY (id)
 );

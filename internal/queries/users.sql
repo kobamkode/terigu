@@ -1,5 +1,5 @@
 -- name: CreateUser :exec
-insert into users (name) values ($1);
+insert into users (username) values ($1);
 
 -- name: ListUsers :many
 select * from users;

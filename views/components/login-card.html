@@ -2,7 +2,7 @@
 	<div class="card-body items-center text-center">
 		<h2 class="card-title">{{.Title}}</h2>
 
-		<form hx-post="/admin/login" hx-target="#form-login" hx-swap="outerHTML">
+		<form hx-post="/api/login">
 			<div class="form-control my-4">
 				<label class="input input-bordered flex items-center gap-2">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
