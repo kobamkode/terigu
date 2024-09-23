@@ -5,14 +5,15 @@
 	<title>{{.AppName}}</title>
 	<link href="assets/css/dist.css" rel="stylesheet">
 	<script src="assets/js/htmx.min.js"></script>
+	<script src="assets/js/feather.min.js"></script>
 </head>
 
-<body class="bg-slate-200">
-	{{template "components/navbar" .}}
-	<div class="container mx-auto min-h-screen">
-		{{embed}}
-	</div>
-	{{template "components/footer"}}
+<body>
+	{{embed}}
+
+	<script>
+		feather.replace();
+	</script>
 </body>
 
 </html>

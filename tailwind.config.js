@@ -2,11 +2,16 @@
 module.exports = {
   content: ["./views/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        cabin: ['Cabin']
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('daisyui'),
+    require('@tailwindcss/typography'),
+    //require('daisyui'),
   ],
 }
 
