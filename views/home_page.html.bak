@@ -1,0 +1,62 @@
+<header class="w-full fixed top-0">
+	<nav class="flex flex-row items-center py-10 space-x-16 bg-white">
+		<a href="" class="basis-1/6">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				stroke="currentColor" class="size-10 mx-auto text-gray-700">
+				<path stroke-linecap="round" stroke-linejoin="round"
+					d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+			</svg>
+		</a>
+		<p class="basis-5/6 text-5xl text-blue-700 font-cabin font-bold tracking-wide">
+			<a href="">{{ .Title }}</a>
+
+		</p>
+		<a href="" class="basis-1/6">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				stroke="currentColor" class="size-10 mx-auto text-gray-700">
+				<path stroke-linecap="round" stroke-linejoin="round"
+					d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+			</svg>
+		</a>
+	</nav>
+</header>
+
+<section class="fixed w-full h-screen bg-white hidden">
+	<div class="flex flex-row items-center py-10 border-b-2 border-b-gray-300">
+		<p class="mx-auto text-5xl text-blue-700 font-cabin font-bold tracking-wide">
+			<a href="">{{ .Title }}</a>
+		</p>
+		<a href="" class="float-right mr-10">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				stroke="currentColor" class="size-10">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+			</svg>
+		</a>
+	</div>
+	menu
+</section>
+
+<section class="banner w-full bg-gray-100">
+	<div class="flex flex-col items-center space-y-12 px-10 pb-16">
+		<img class="banner-img size-fit" src="assets/images/banner.jpeg">
+		<h1 class="banner-title text-7xl font-cabin tracking-wider text-gray-700">Neque porro
+			quisquam</h1>
+		<p class="banner-desc text-4xl font-cabin tracking-wide leading-normal text-gray-500">Est qui dolorem
+			ipsum
+			quia dolor
+			sit amet,
+			consectetur, adipisci velit...</p>
+		<a href=""
+			class="banner-cta w-full bg-blue-700 rounded-lg text-4xl text-white font-cabin tracking-wider font-bold text-center py-10">
+			<p class="inline-flex">
+				Enroll Now
+				<svg class="size-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					stroke-width="1.5" stroke="currentColor" class="size-6">
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+				</svg>
+			</p>
+
+		</a>
+	</div>
+</section>

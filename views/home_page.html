@@ -1,45 +1,36 @@
-<header class="navbar fixed w-full top-0">
-	<div class="flex flex-row items-center py-10 space-x-16 bg-white">
-		<a href="" class="basis-1/6">
-			<i data-feather="menu" class="size-10 mx-auto text-gray-700"></i>
-		</a>
-		<p class="basis-5/6 text-5xl text-blue-700 font-cabin font-bold tracking-wide">
-			<a href="">{{ .Title }}</a>
-		</p>
-		<a href="" class="basis-1/6">
-			<i data-feather="search" class="size-10 mx-auto text-gray-700"></i>
-		</a>
+<div class="drawer">
+	<input id="menu-drawer" type="checkbox" class="drawer-toggle" />
+	<div class="drawer-content flex flex-col">
+		<!-- Navbar -->
+		<div class="navbar bg-base-300 w-full h-40">
+			<div class="flex-none lg:hidden">
+				<label for="menu-drawer" aria-label="open sidebar"
+					class="btn btn-square btn-ghost h-10">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+						class="inline-block h-20 w-20 stroke-current">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</label>
+			</div>
+			<div class="mx-2 flex-1 px-2 font-cabin text-6xl">{{.Title}}</div>
+			<div class="hidden flex-none lg:block">
+				<ul class="menu menu-horizontal">
+					<!-- Navbar menu content here -->
+					<li><a>Navbar Item 1</a></li>
+					<li><a>Navbar Item 2</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page content here -->
+		Content
 	</div>
-</header>
-
-<section class="fixed w-full h-screen bg-white hidden">
-	<div class="flex flex-row items-center py-10 border-b-2 border-b-gray-300">
-		<p class="mx-auto text-5xl text-blue-700 font-cabin font-bold tracking-wide">
-			<a href="">{{ .Title }}</a>
-		</p>
-		<a href="" class="float-right mr-10">
-			<i data-feather="x" class="size-10 mx-auto text-gray-700"></i>
-		</a>
+	<div class="drawer-side">
+		<label for="menu-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+		<ul class="menu bg-base-200 min-h-full w-80 p-4">
+			<!-- Sidebar content here -->
+			<li><a>Sidebar Item 1</a></li>
+			<li><a>Sidebar Item 2</a></li>
+		</ul>
 	</div>
-	menu
-</section>
-
-<section class="banner w-full bg-gray-100">
-	<div class="flex flex-col items-center space-y-12 px-10 pb-16">
-		<img class="banner-img size-fit" src="assets/images/banner.jpeg">
-		<h1 class="banner-title text-7xl font-cabin tracking-wider text-gray-700">Neque porro
-			quisquam</h1>
-		<p class="banner-desc text-4xl font-cabin tracking-wide leading-normal text-gray-500">Est qui dolorem
-			ipsum
-			quia dolor
-			sit amet,
-			consectetur, adipisci velit...</p>
-		<a href=""
-			class="banner-cta w-full bg-blue-700 rounded-lg text-4xl text-white font-cabin tracking-wider font-bold text-center py-10">
-			<p class="inline-flex">
-				Enroll Now <i data-feather="arrow-right" class="size-10"></i>
-			</p>
-
-		</a>
-	</div>
-</section>
+</div>
