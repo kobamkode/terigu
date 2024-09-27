@@ -7,7 +7,7 @@ import (
 )
 
 func LoginPage(c *fiber.Ctx) error {
-	return c.Render("auth", fiber.Map{
+	return c.Render("admin-pages/auth", fiber.Map{
 		"AppName": os.Getenv("APP_NAME"),
 		"Title":   "Login",
 	}, "layouts/auth")

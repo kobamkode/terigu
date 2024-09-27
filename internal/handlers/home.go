@@ -6,7 +6,14 @@ import (
 )
 
 func HomePage(c *fiber.Ctx) error {
-	return c.Render("home_page", fiber.Map{
+	return c.Render("web-pages/home", fiber.Map{
+		"AppName": config.Get("APP_NAME"),
+		"Title":   config.Get("APP_NAME"),
+	}, "layouts/web")
+}
+
+func JoinPage(c *fiber.Ctx) error {
+	return c.Render("web-pages/join", fiber.Map{
 		"AppName": config.Get("APP_NAME"),
 		"Title":   config.Get("APP_NAME"),
 	}, "layouts/web")

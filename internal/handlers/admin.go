@@ -7,7 +7,7 @@ import (
 )
 
 func DashboardPage(c *fiber.Ctx) error {
-	return c.Render("dashboard", fiber.Map{
+	return c.Render("admin-pages/dashboard", fiber.Map{
 		"AppName": os.Getenv("APP_NAME"),
 		"Title":   "Hello, Dashboard!",
 	}, "layouts/admin")

@@ -15,4 +15,4 @@ if using go install please make sure the go bin path is in $PATH
 - `docker-compose up -d`
 - `cp .env.staging .env`
 - `npm install`
-- `make`
+- `air`
