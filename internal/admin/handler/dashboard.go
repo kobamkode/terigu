@@ -1,14 +1,13 @@
-package handlers
+package handler
 
 import (
-	"os"
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/kobamkode/terigu/config"
 )
 
 func DashboardPage(c *fiber.Ctx) error {
-	return c.Render("admin-pages/dashboard", fiber.Map{
-		"AppName": os.Getenv("APP_NAME"),
+	return c.Render("admin/dashboard", fiber.Map{
+		"AppName": config.Get("APP_NAME"),
 		"Title":   "Hello, Dashboard!",
 	}, "layouts/admin")
 }
