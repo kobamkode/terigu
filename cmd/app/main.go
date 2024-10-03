@@ -8,7 +8,7 @@ import (
 	"github.com/gofiber/template/html/v2"
 	"github.com/kobamkode/terigu/config"
 	"github.com/kobamkode/terigu/database"
-	"github.com/kobamkode/terigu/internal/routes"
+	"github.com/kobamkode/terigu/internal"
 )
 
 func main() {
@@ -22,9 +22,9 @@ func main() {
 	db := database.PostgresConn()
 	defer db.Close()
 
-	store := database.RedisConn()
+	mem := database.RedisConn()
 
-	routes.Setup(app, db, store)
+	internal.Setup(app, db, mem)
 
 	log.Fatal(app.Listen(fmt.Sprintf(":%s", config.Get("APP_PORT"))))
 }

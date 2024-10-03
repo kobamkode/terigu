@@ -13,6 +13,6 @@ if using go install please make sure the go bin path is in $PATH
 ### Run local
 
 - `docker-compose up -d`
-- `cp .env.staging .env`
+- `cp .env.example .env`
 - `npm install`
 - `air`
