@@ -1,12 +1,13 @@
-all: sqlc-gen style-build run
+air: style-build build-air
 
 run:
 	go run cmd/app/main.go
 
+build-air:
+	go build -o tmp/main cmd/app/main.go
+
 sqlc-gen:
 	sqlc generate
-
-up: compose-up migrate-up
 
 compose-up:
 	docker-compose up -d

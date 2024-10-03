@@ -1,14 +1,20 @@
 package handlers
 
 import (
-	"os"
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/kobamkode/terigu/config"
 )
 
 func HomePage(c *fiber.Ctx) error {
-	return c.Render("home", fiber.Map{
-		"AppName": os.Getenv("APP_NAME"),
-		"Title":   "Hello, World!",
+	return c.Render("web-pages/home", fiber.Map{
+		"AppName": config.Get("APP_NAME"),
+		"Title":   config.Get("APP_NAME"),
+	}, "layouts/web")
+}
+
+func JoinPage(c *fiber.Ctx) error {
+	return c.Render("web-pages/join", fiber.Map{
+		"AppName": config.Get("APP_NAME"),
+		"Title":   config.Get("APP_NAME"),
 	}, "layouts/web")
 }

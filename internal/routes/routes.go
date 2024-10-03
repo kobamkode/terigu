@@ -3,9 +3,11 @@ package routes
 import (
 	"github.com/gofiber/fiber/v2"
 	// "github.com/gofiber/fiber/v2/middleware/csrf"
+	"github.com/gofiber/fiber/v2/middleware/favicon"
 	"github.com/gofiber/fiber/v2/middleware/limiter"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
+
 	// "github.com/gofiber/fiber/v2/middleware/session"
 	"github.com/gofiber/storage/redis/v3"
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -21,6 +23,7 @@ func Setup(app *fiber.App, db *pgxpool.Pool, store *redis.Storage) {
 	// Middlewares
 	// s := session.New(config.Session(store))
 	// app.Use(csrf.New(config.Csrf(s)))
+	app.Use(favicon.New())
 	app.Use(logger.New(config.Logger()))
 	app.Use(requestid.New())
 	if config.Get("APP_ENV") != "local" {
@@ -29,6 +32,7 @@ func Setup(app *fiber.App, db *pgxpool.Pool, store *redis.Storage) {
 
 	// Web Routes
 	app.Get("/", handlers.HomePage)
+	app.Get("/join", handlers.JoinPage)
 
 	// API Routes
 	api := app.Group("/api")

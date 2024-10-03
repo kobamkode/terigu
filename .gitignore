@@ -1,6 +1,6 @@
 .env
-assets/css/dist.css
 node_modules
 gen/db/db.go
 gen/db/models.go
 gen/db/users.sql.go
+tmp

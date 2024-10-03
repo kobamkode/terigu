@@ -6,6 +6,7 @@ Me try to make 🍜 with [fiber](https://gofiber.io/) + [htmx](https://htmx.org/
 
 ### Dependencies
 
+- [air](https://github.com/air-verse/air?tab=readme-ov-file#installation)
 - [sqlc](https://docs.sqlc.dev/en/stable/overview/install.html)
 if using go install please make sure the go bin path is in $PATH
 
@@ -14,4 +15,4 @@ if using go install please make sure the go bin path is in $PATH
 - `docker-compose up -d`
 - `cp .env.staging .env`
 - `npm install`
-- `make`
+- `air`
