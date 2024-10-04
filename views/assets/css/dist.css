@@ -809,13 +809,6 @@ select{
   height: 1.25rem;
 }
 
-.size-fit{
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
 .h-4{
   height: 1rem;
 }
@@ -932,6 +925,11 @@ select{
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.object-fill{
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .p-4{
